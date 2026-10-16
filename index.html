@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BNPMC Math Club — mathematics, problem solving, workshops and Mathletics.">
+  <title>BNPMC Math Club</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="BNPMC Math Club home">
+      <span class="brand-mark">∑</span><span><strong>BNPMC</strong><small>MATH CLUB</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">☰ <span class="sr-only">Toggle navigation</span></button>
+    <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About Us</a><a href="#achievements">Achievements</a>
+      <a href="#mathletics">Mathletics</a><a href="#winners">Winners</a><a href="#panel">Panel</a>
+      <a href="#articles">Articles</a><a href="#join" class="nav-cta">Join the club ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-wrap">
+      <div class="formula formula-top" aria-hidden="true">∫ f(x) dx · a²+b²=c² · π ≈ 3.14159 · ∑n</div>
+      <div class="hero-copy">
+        <p class="eyebrow">Think • Explore • Solve</p>
+        <h1>Welcome to <span>BNPMC Math Club</span></h1>
+        <p class="hero-lede">A community for curious minds, creative problem-solvers, and future mathematicians.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#mathletics">Explore Mathletics</a><a class="button button-light" href="#join">Become a member</a></div>
+        <div class="hero-note"><span class="dot"></span> Big ideas start with one good question.</div>
+      </div>
+      <div class="hero-card">
+        <div class="paper-heading"><span>YOUR NEXT CHALLENGE</span><span class="scribble">x + y = ?</span></div>
+        <div class="equation-art" aria-hidden="true"><span>π</span><span>√x</span><span>∑</span><span>∞</span><span>△</span><span>f(x)</span></div>
+        <h2>Curiosity is our favourite formula.</h2>
+        <p>Olympiad practice, peer learning, workshops and a little friendly competition.</p>
+        <a class="text-link" href="#about">Get to know us →</a>
+      </div>
+    </section>
+
+    <section class="stats section-wrap" aria-label="Club highlights">
+      <div><strong>01</strong><span>Think deeper</span></div><div><strong>02</strong><span>Learn together</span></div><div><strong>03</strong><span>Celebrate progress</span></div><div><strong>∞</strong><span>Questions to explore</span></div>
+    </section>
+
+    <section id="about" class="section-wrap section-block">
+      <div class="section-intro"><p class="eyebrow">A little about us</p><h2>Why join our club?</h2><p>BNPMC Math Club brings students together to discover the fun, challenge and beauty of mathematics—inside and beyond the classroom.</p></div>
+      <div class="feature-grid">
+        <article class="paper-card feature-card"><span class="card-icon">✳</span><h3>Olympiad preparation</h3><p>Practice for mathematical competitions with interesting problems and supportive feedback.</p></article>
+        <article class="paper-card feature-card"><span class="card-icon">⌘</span><h3>New perspectives</h3><p>Explore number theory, combinatorics, geometry, logic and ideas beyond the usual syllabus.</p></article>
+        <article class="paper-card feature-card"><span class="card-icon">✎</span><h3>Community</h3><p>Share approaches, learn from other students and celebrate every breakthrough.</p></article>
+      </div>
+    </section>
+
+    <section id="purpose" class="section-wrap purpose-row">
+      <div class="paper-card purpose-card"><p class="eyebrow">Our purpose</p><h2>Make room for wonder.</h2><p>We aim to make mathematical thinking welcoming, collaborative and exciting. Whether you're new to puzzles or preparing for an olympiad, there is always something to learn.</p><ul><li>Preparation through regular practice</li><li>Resources for advanced mathematical topics</li><li>Recognition for effort, creativity and achievement</li></ul></div>
+      <div class="purpose-aside"><span class="big-symbol">∴</span><h3>One problem.<br>Many ways to solve it.</h3><p>Try a new method. Explain your thinking. Ask one more question.</p></div>
+    </section>
+
+    <section id="mathletics" class="section-wrap section-block">
+      <div class="section-intro"><p class="eyebrow">Play, practise, improve</p><h2>Math Sprint: beat the clock</h2><p>Play a real interactive arithmetic game: answer as many questions as you can before time runs out.</p></div>
+      <div class="mathletics-layout">
+        <div class="paper-card contest-card game-card">
+          <div class="contest-top"><span class="tag">LIVE GAME</span><span class="timer" id="gameTimer">60s</span></div>
+          <div class="game-stats"><div><small>SCORE</small><strong id="gameScore">0</strong></div><div><small>QUESTION</small><strong id="gameQuestionNo">0</strong></div><div><small>BEST THIS SESSION</small><strong id="gameBest">0</strong></div></div>
+          <div class="game-play-area">
+            <p id="gameStatus" class="game-status" aria-live="polite">Ready when you are. Press Start Game!</p>
+            <div id="gameQuestion" class="game-question">12 + 8 = ?</div>
+            <form id="mathGameForm" class="math-game-form">
+              <label for="gameAnswer">Your answer</label>
+              <input id="gameAnswer" type="number" inputmode="numeric" autocomplete="off" placeholder="Type answer" disabled required>
+              <button class="button button-primary" id="gameSubmit" type="submit" disabled>Submit answer</button>
+            </form>
+            <div class="game-buttons"><button class="button button-primary" id="startGame" type="button">Start Game</button><button class="button button-quiet" id="restartGame" type="button">Restart</button></div>
+            <p id="gameFeedback" class="result" aria-live="polite"></p>
+          </div>
+        </div>
+        <aside class="paper-card contest-aside"><span class="big-symbol">∑</span><h3>How to play</h3><ol><li>Press <strong>Start Game</strong> to begin the 60-second round.</li><li>Solve each addition, subtraction, multiplication or division question.</li><li>Submit your answer to score a point and get the next question.</li><li>Try again to beat your best score this session.</li></ol><p class="small-note">This game runs in your browser. Scores are not uploaded or stored on a server.</p></aside>
+      </div>
+    </section>
+
+    <section id="achievements" class="section-wrap section-block">
+      <div class="section-intro"><p class="eyebrow">Small steps, big milestones</p><h2>Achievements & workshops</h2><p>Celebrating the problem-solvers, events and milestones of BNPMC Math Club.</p></div>
+      <div class="achievement-grid">
+        <article class="paper-card achievement-card"><div class="achievement-art">✦ <span>ACHIEVEMENTS</span> ✦</div><h3>Club achievements</h3><p>Explore the club’s achievements and certificates in the shared document. If it asks for access, open the file owner’s sharing settings.</p><a class="text-link" href="https://drive.google.com/file/d/1Aisl201URAwVm1eXUje6jgRI5ck3DxDC/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">View achievements on Google Drive ↗</a></article>
+        <article class="paper-card achievement-card"><div class="achievement-art">∑ <span>MATHLETICS</span> ∑</div><h3>Mathletics milestones</h3><p>Recognising students who take on challenging problems, develop their reasoning and share creative solutions.</p><span class="mini-label">THINK · PRACTISE · GROW</span></article>
+        <article class="paper-card achievement-card"><div class="achievement-art">∞ <span>COMMUNITY</span> ∞</div><h3>Workshops & teamwork</h3><p>Learning together through mathematical exploration, student-led activities and collaborative events.</p><span class="mini-label">IDEAS IN ACTION</span></article>
+      </div>
+    </section>
+
+    <section id="winners" class="section-wrap section-block">
+      <div class="section-intro"><p class="eyebrow">Give credit where it's due</p><h2>Winners board</h2><p>Browse the Mathletics results from the supplied winners reference. Search for an event or student, or filter by category.</p></div>
+      <div class="table-tools"><input type="search" id="winnerSearch" placeholder="Search event or student…" aria-label="Search winners"><select id="winnerCategory" aria-label="Filter by category"><option value="all">All categories</option><option>General</option><option>College</option><option>School</option></select></div>
+      <div class="table-scroll"><table><thead><tr><th>Event</th><th>Category</th><th>1st place</th><th>2nd place</th><th>3rd place</th></tr></thead><tbody id="winnerRows"></tbody></table></div>
+      <p class="small-note">Results transcribed from the reference images. Please double-check spellings before publishing.</p>
+    </section>
+
+    <section id="panel" class="section-wrap section-block">
+      <div class="section-intro"><p class="eyebrow">People behind the puzzles</p><h2>Executive Panel — Session 2025–26</h2><p>Meet the student leaders, department teams and volunteers of BNPMC Math Club.</p></div>
+      <div class="panel-groups">
+        <div class="department-heading"><p class="eyebrow">Leadership</p><h3>Executive panel</h3></div>
+        <div class="executive-grid text-only-panel">
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">Moderator</span><h3>Fazlur Rahman Shamim</h3></div></article>
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">President</span><h3>Noor M. Nefertiti</h3></div></article>
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">Vice President</span><h3>Shadman Kabir</h3></div></article>
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">Vice President</span><h3>Fahim Montasir Fahad</h3></div></article>
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">General Secretary</span><h3>Anmoy Saha</h3></div></article>
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">Organizing Secretary</span><h3>Afra Saiyara Farnaz</h3></div></article>
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">Joint Secretary</span><h3>Atia Nayeem</h3></div></article>
+        </div>
+        <div class="department-heading"><p class="eyebrow">Team</p><h3>Executive members</h3></div>
+        <div class="department-list panel-name-list">
+          <article class="paper-card department"><span class="department-number">01</span><div><h3>Farah Sharmin</h3></div></article>
+          <article class="paper-card department"><span class="department-number">02</span><div><h3>Alfi Shahrin Islam</h3></div></article>
+          <article class="paper-card department"><span class="department-number">03</span><div><h3>MD Arham Khan Tahmid</h3></div></article>
+          <article class="paper-card department"><span class="department-number">04</span><div><h3>Raika Hasan</h3></div></article>
+          <article class="paper-card department"><span class="department-number">05</span><div><h3>Tawfia Hassan</h3></div></article>
+          <article class="paper-card department"><span class="department-number">06</span><div><h3>SK Shoeb Hossain</h3></div></article>
+          <article class="paper-card department"><span class="department-number">07</span><div><h3>Afnan Alam</h3></div></article>
+        </div>
+        <div class="department-heading"><p class="eyebrow">Operations</p><h3>Volunteer in-charges</h3></div>
+        <div class="executive-grid text-only-panel">
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">Morning Shift</span><h3>Nazifa Tasneem</h3></div></article>
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">Day Shift</span><h3>Yeasin Hossain Mahin</h3></div></article>
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">Math Explorers Co-Head</span><h3>Saniad Rahman</h3></div></article>
+          <article class="paper-card executive-card"><div class="executive-info"><span class="executive-role">Event Architects Co-Heads</span><h3>Mohammad Shabbir Talukder</h3><p>Mohammad Shahan Talukder</p></div></article>
+        </div>
+        <div class="department-heading"><p class="eyebrow">Departments · Session 2025–26</p><h3>Department designations</h3></div>
+        <div class="department-list">
+          <article class="paper-card department"><span class="department-number">01</span><div><h3>BNMPCMC Explorers</h3><p>Advisor: Farah Sharmin · Head: Tawfia Hassan · Co-head: Saniad Rahman</p></div></article>
+          <article class="paper-card department"><span class="department-number">02</span><div><h3>BNMPCMC Techies</h3><p>Advisor: Alfi Islam · Head: Raika Hasan · Co-head: Shoeb Hossain</p></div></article>
+          <article class="paper-card department"><span class="department-number">03</span><div><h3>BNMPCMC Artisans</h3><p>Head: Afra Saiyara Farnaz · Co-head: Afnan Alam</p></div></article>
+          <article class="paper-card department"><span class="department-number">04</span><div><h3>BNMPCMC Event Architects</h3><p>Head: Atia Nayeem · Co-heads: Mohammad Shahan Talukder and Mohammad Shabbir Talukder</p></div></article>
+          <article class="paper-card department"><span class="department-number">05</span><div><h3>Department Supervisor</h3><p>Anmoy Saha</p></div></article>
+          <article class="paper-card department"><span class="department-number">06</span><div><h3>BNMPCMC Volunteer In-Charges</h3><p>Day shift: Yeasin Hossain Mahin · Morning shift: Nazifa Tasneem</p></div></article>
+        </div>
+      </div>
+      <p class="small-note">Panel member photos have been removed as requested.</p>
+    </section>
+
+    <section id="articles" class="section-wrap section-block">
+      <div class="section-intro"><p class="eyebrow">Notes from curious minds</p><h2>Articles & resources</h2><p>Short reads to get you thinking. These example cards can become links to your club's own articles.</p></div>
+      <div class="article-grid">
+        <article class="paper-card article-card"><span class="article-mark">01 / PUZZLE</span><h3>Why does this pattern work?</h3><p>Look for structure, test a small case, then see if you can explain the pattern generally.</p><a href="#mathletics" class="text-link">Try a question →</a></article>
+        <article class="paper-card article-card"><span class="article-mark">02 / STRATEGY</span><h3>How to approach a hard problem</h3><p>Draw a diagram, write down what you know, and try a simpler version of the problem.</p><a href="#join" class="text-link">Discuss with us →</a></article>
+        <article class="paper-card article-card"><span class="article-mark">03 / COMMUNITY</span><h3>Learning by explaining</h3><p>Sharing a solution helps you find gaps in your reasoning and discover new methods.</p><a href="#about" class="text-link">Explore the club →</a></article>
+        <article class="paper-card article-card social-article-card"><span class="article-mark">04 / FACEBOOK POST</span><h3>BNPMC Math Club — Latest Post</h3><p>Read the club's Facebook post for updates, activities and announcements.</p><a href="https://www.facebook.com/club.bnmpc.math/posts/pfbid0cPUYaMSgk6uCPQV6XtfB2SuVgDoiXz4xg1L9USV9epbJzzYt8UUPoEUZED2miggwl" class="text-link" target="_blank" rel="noopener noreferrer">Read Facebook post ↗</a></article>
+        <article class="paper-card article-card social-article-card"><span class="article-mark">05 / FACEBOOK SHARE</span><h3>More from our community</h3><p>Open this shared Facebook link to see another club-related post or resource.</p><a href="https://www.facebook.com/share/1bmTr8aVJs/" class="text-link" target="_blank" rel="noopener noreferrer">Open Facebook link ↗</a></article>
+      </div>
+    </section>
+
+    <section id="join" class="section-wrap join-section join-section-google">
+      <div class="join-copy"><p class="eyebrow">Your next chapter</p><h2>Apply to join BNPMC Math Club</h2><p>Complete the student application form below. Your answers are submitted directly to the club's Google Form, where the organizers can review responses.</p><div class="join-doodle" aria-hidden="true">x² + y² <span>→</span> new friends</div><a class="button button-primary google-form-link" href="https://docs.google.com/forms/d/e/1FAIpQLScNskcbFwwsSumHn44KBHOhr5npedfY3mIxzDWUQ7oUTxVpOg/viewform" target="_blank" rel="noopener noreferrer">Open application in a new tab ↗</a></div>
+      <div class="google-form-wrap">
+        <iframe title="BNPMC Math Club student application form" src="https://docs.google.com/forms/d/e/1FAIpQLScNskcbFwwsSumHn44KBHOhr5npedfY3mIxzDWUQ7oUTxVpOg/viewform?embedded=true" width="100%" height="1250" frameborder="0" marginheight="0" marginwidth="0" loading="lazy">Loading application form…</iframe>
+        <p class="google-form-fallback">If the form does not appear, <a href="https://docs.google.com/forms/d/e/1FAIpQLScNskcbFwwsSumHn44KBHOhr5npedfY3mIxzDWUQ7oUTxVpOg/viewform" target="_blank" rel="noopener noreferrer">open the student application form here</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-brand"><span class="brand-mark">∑</span><div><strong>BNPMC MATH CLUB</strong><p>Curiosity is a good place to start.</p></div></div><div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#winners">Winners</a><a href="#join">Join</a></div><div class="footer-contact"><span>Contact</span><a href="mailto:bnpmcmcofficial@gmail.com">bnpmcmcofficial@gmail.com</a><span class="small-note">Replace this address if your club uses another contact email.</span></div><div class="footer-social"><span>Follow the club</span><a href="https://www.facebook.com/club.bnmpc.math" target="_blank" rel="noopener noreferrer" aria-label="BNPMC Math Club on Facebook">↗ Facebook</a><a href="https://www.instagram.com/bnmpcmathclub/" target="_blank" rel="noopener noreferrer" aria-label="BNPMC Math Club on Instagram">↗ Instagram</a><a href="http://www.noormohammadcollege.ac.bd/" target="_blank" rel="noopener noreferrer">↗ College website</a></div><p class="copyright">© <span id="year"></span> BNPMC Math Club · Made for curious minds.</p></footer>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
